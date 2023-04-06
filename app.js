@@ -61,3 +61,8 @@ function deletePlayer(event) {
         alert('Failed to delete player. Please try again later.');
       });
 }
+
+
+function editPlayer(event) {
+    
+}
