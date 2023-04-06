@@ -45,5 +45,19 @@ fetch('http://localhost:3000/players')
 
 
 function deletePlayer(event) {
-
+    const playerId = event.target.getAttribute('data-player-id');
+    fetch(`http://localhost:3000/players/${playerId}`, {
+   method: 'DELETE' })
+      .then(response => {
+        if (response.ok) {
+          const playerCard = event.target.closest('.player-card');
+          playerCard.remove();
+        } else {
+          throw new Error(`Failed to delete player with ID ${playerId}`);
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Failed to delete player. Please try again later.');
+      });
 }
