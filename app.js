@@ -37,3 +37,7 @@ fetch('http://localhost:3000/players')
       playersContainer.appendChild(playerCard);
     })
 });
+
+
+
+function deletePlayer(event) {}
