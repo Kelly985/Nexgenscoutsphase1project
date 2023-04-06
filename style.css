@@ -6,11 +6,17 @@
     padding: 20px;
     
     background-color: #eeafeb;
-   
   }
+
 
   #search-form {
     position: absolute;
     right: 20px;
     top: 10px; 
+  }
+
+
+h1{
+    margin-top: 50px;
+    text-align: center;
   }
