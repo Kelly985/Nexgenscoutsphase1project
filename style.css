@@ -26,7 +26,7 @@ h1{
     position: relative;
     width: 200%;
     height: 400px;
-    background-color: rgb(235, 255, 13);
+    background-color: rgb(191, 242, 186);
     background-size: cover;
 margin-top: 50px;
   }
@@ -114,4 +114,12 @@ margin-top: 50px;
       width: 70%;
       height: 40%;
       object-fit: cover;
+  }
+
+  body{
+    background-color: mediumturquoise;
+  }
+
+  h2{
+    text-align: center;
   }
