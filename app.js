@@ -37,8 +37,14 @@ fetch('http://localhost:3000/players')
       playersContainer.appendChild(playerCard);
 
 
+        // Add event listeners for edit and delete buttons
+        const editButton = playerCard.querySelector('.edit-player-button');
+        editButton.addEventListener('click', editPlayer);
+        
       const deleteButton = playerCard.querySelector('.deleteBtn');
        deleteButton.addEventListener('click', deletePlayer);
+
+       
     })
 });
 
@@ -64,5 +70,5 @@ function deletePlayer(event) {
 
 
 function editPlayer(event) {
-    
+
 }
