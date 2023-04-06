@@ -35,9 +35,15 @@ fetch('http://localhost:3000/players')
         <button class="edit-player-button" data-player-id="${player.id}">Edit</button>
         <button class="deleteBtn" data-player-id="${player.id}">Delete</button>`;
       playersContainer.appendChild(playerCard);
+
+
+      const deleteButton = playerCard.querySelector('.deleteBtn');
+       deleteButton.addEventListener('click', deletePlayer);
     })
 });
 
 
 
-function deletePlayer(event) {}
+function deletePlayer(event) {
+
+}
