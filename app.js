@@ -188,3 +188,84 @@ searchForm.addEventListener('submit', event => {
       })
     })
 });
+
+
+const addPlayerButton = document.getElementById('add-player-button');
+addPlayerButton.addEventListener('click', addPlayer);
+
+function addPlayer() {
+  // Create an empty form for the new player
+  const form = document.createElement('form');
+  form.innerHTML = `
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="image">Image URL:</label>
+    <input type="text" id="image" name="image" required><br>
+    <label for="position">Position:</label>
+    <input type="text" id="position" name="position" required><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br>
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required><br>
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" required><br>
+    <label for="nationality">Nationality:</label>
+    <input type="text" id="nationality" name="nationality" required><br>
+    <label for="key_attribute">Key Attribute:</label>
+    <input type="text" id="key_attribute" name="key_attribute" required><br>
+    <button type="submit">Add</button>
+  `;
+
+  // Replace the "Add Player" button with the form
+  addPlayerButton.replaceWith(form);
+
+  // Add event listener for the form submission
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    // Collect the data from the form
+    const newPlayer = {
+      name: form.elements.name.value,
+      image: form.elements.image.value,
+      position: form.elements.position.value,
+      age: form.elements.age.value,
+      weight: form.elements.weight.value,
+      height: form.elements.height.value,
+      nationality: form.elements.nationality.value,
+      key_attribute: form.elements.key_attribute.value,
+    };
+
+    // Send the new player data to the server
+    fetch('http://localhost:3000/players', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPlayer)
+    })
+    .then(response => response.json())
+    .then(createdPlayer => {
+      // Create a new player card for the created player
+      const playerCard = document.createElement('div');
+      playerCard.classList.add('player-card');
+      playerCard.innerHTML = `
+        <h2>${createdPlayer.name}</h2>
+        <img src="${createdPlayer.image}">
+        <p>Position: ${createdPlayer.position}</p>
+        <p>Age: ${createdPlayer.age}</p>
+        <p>Weight: ${createdPlayer.weight} kg</p>
+        <p>Height: ${createdPlayer.height} cm</p>
+        <p>Nationality: ${createdPlayer.nationality}</p>
+        <p>Key Attribute: ${createdPlayer.key_attribute}</p>
+        `;
+          // Insert the new player card at the end of the list
+  const playerList = document.getElementById('player-list');
+  playerList.appendChild(playerCard);
+
+  // Reset the form and replace the player form with the "Add Player" button
+  form.reset();
+  playerCard.after(addPlayerButton);
+})
+.catch(error => console.error('Error adding player:', error));
+});
+}
