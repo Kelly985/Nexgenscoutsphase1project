@@ -40,7 +40,7 @@ fetch('http://localhost:3000/players')
         // Add event listeners for edit and delete buttons
         const editButton = playerCard.querySelector('.edit-player-button');
         editButton.addEventListener('click', editPlayer);
-        
+
       const deleteButton = playerCard.querySelector('.deleteBtn');
        deleteButton.addEventListener('click', deletePlayer);
 
@@ -70,5 +70,89 @@ function deletePlayer(event) {
 
 
 function editPlayer(event) {
+const playerId = event.target.getAttribute('data-player-id');
+  
+  // Get the player data from the server
+  fetch(`http://localhost:3000/players/${playerId}`)
+    .then(response => response.json())
+    .then(player => {
+      // Create an editable form for the player
+      const form = document.createElement('form');
+      form.innerHTML = `
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="${player.name}" required><br>
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" value="${player.image}" required><br>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" value="${player.position}" required><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="${player.age}" required><br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" value="${player.weight}" required><br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" value="${player.height}" required><br>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" value="${player.nationality}" required><br>
+        <label for="key_attribute">Key Attribute:</label>
+        <input type="text" id="key_attribute" name="key_attribute" value="${player.key_attribute}" required><br>
+        <button type="submit">Save</button>
+      `;
+      
+      // Replace the player card with the form
+      const playerCard = event.target.closest('.player-card');
+      playerCard.replaceWith(form);
+      
+      // Add event listener for the form submission
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        
+        // Collect the updated data from the form
+        const updatedPlayer = {
+          name: form.elements.name.value,
+          image: form.elements.image.value,
+          position: form.elements.position.value,
+          age: form.elements.age.value,
+          weight: form.elements.weight.value,
+          height: form.elements.height.value,
+          nationality: form.elements.nationality.value,
+          key_attribute: form.elements.key_attribute.value,
+        };
+        
+        // Send the updated data to the server
+        fetch(`http://localhost:3000/players/${playerId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedPlayer)
+        })
+        .then(response => response.json())
+        .then(updatedPlayer => {
+          // Replace the form with the updated player card
+          const updatedPlayerCard = document.createElement('div');
+          updatedPlayerCard.classList.add('player-card');
+          updatedPlayerCard.innerHTML = `
+            <h2>${updatedPlayer.name}</h2>
+            <img src="${updatedPlayer.image}">
+            <p>Position: ${updatedPlayer.position}</p>
+            <p>Age: ${updatedPlayer.age}</p>
+            <p>Weight: ${updatedPlayer.weight} kg</p>
+            <p>Height: ${updatedPlayer.height} cm</p> 
+            <p>Nationality: ${updatedPlayer.nationality}</p> 
+            <p>Key Attribute: ${updatedPlayer.key_attribute}</p> 
+            <button class="edit-player-button" data-player-id="${updatedPlayer.id}">Edit</button> 
+            <button class="delete-button" data-player-id="${updatedPlayer.id}">Delete</button>`;
 
-}
+
+            form.replaceWith(updatedPlayerCard);
+
+// Add event listeners for the edit and delete buttons on the updated player card
+const editButton = updatedPlayerCard.querySelector('.edit-player-button');
+editButton.addEventListener('click', editPlayer);
+
+const deleteButton = playerCard.querySelector('.deleteBtn');
+deleteButton.addEventListener('click', deletePlayer);
+      })})
+.catch(error => {
+console.error('Error updating player:', error)
+})})}
