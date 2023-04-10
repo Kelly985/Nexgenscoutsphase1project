@@ -15,7 +15,7 @@ let slideIndex = 0;
 }
 
 
-const fetchUrl = "http://localhost:3000/players"
+const fetchUrl = "https://nexgenplayers.onrender.com/players"
 fetch(fetchUrl)
   .then(response => response.json())
   .then(data => {
