@@ -56,5 +56,5 @@ Distributed under the Apache License. See `LICENSE.txt` for more information.
 ## Contact
 
 Your Name - [Kelly985 @Github.com]
-Project Link: [ https://github.com/Kelly985/Nexgenscoutsphase1project ]
+Project Link: [ https://kelly985.github.io/Nexgenscoutsphase1project/ ]
 
