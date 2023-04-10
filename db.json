@@ -199,15 +199,15 @@
       "key_attribute": "Finishing"
     },
     {
-      "id": 26,
       "name": "Frenkie de Jong",
-      "position": "Midfielder",
       "image": "https://www.fcbarcelona.com/fcbarcelona/photo/2023/03/24/a48bc974-1375-4ee8-a1f7-2f0ee4fa7a08/de-jong.jpg",
-      "age": 24,
-      "weight": 74,
-      "height": 180,
+      "position": "Midfielder",
+      "age": "24",
+      "weight": "74",
+      "height": "180",
       "nationality": "Netherlands",
-      "key_attribute": "Ball Control"
+      "key_attribute": "Ball Control and passing",
+      "id": 26
     },
     {
       "id": 27,
@@ -219,17 +219,6 @@
       "height": 173,
       "nationality": "Portugal",
       "key_attribute": "Dribbling"
-    },
-    {
-      "name": "Ciro Immobile",
-      "image": "https://th.bing.com/th/id/OIP.2tAUZNP7CbC-C2hEiNXnfQHaE8?w=233&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      "position": "Forward",
-      "age": "31",
-      "weight": "85",
-      "height": "185",
-      "nationality": "Italy",
-      "key_attribute": "Finishing",
-      "id": 28
     },
     {
       "name": "Marcus Rashford",
@@ -259,7 +248,7 @@
       "position": "midfielder",
       "age": "26",
       "weight": "64",
-      "height": "166",
+      "height": "162",
       "nationality": "kenya",
       "key_attribute": "passing",
       "id": 32
@@ -274,6 +263,17 @@
       "nationality": "Ivory Coast",
       "key_attribute": "scoring",
       "id": 33
+    },
+    {
+      "name": "Bukayo Saka",
+      "image": "https://th.bing.com/th/id/OIP.Im9HJwXBR4F8DEXNvqiTigHaHZ?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "position": "forward",
+      "age": "22",
+      "weight": "74",
+      "height": "168",
+      "nationality": "England",
+      "key_attribute": "scoring",
+      "id": 34
     }
   ]
 }

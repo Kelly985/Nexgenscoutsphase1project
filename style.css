@@ -25,13 +25,13 @@ h1{
 
   .slideshow-container {
     position: relative;
-    width: 200%;
+    width: 100%;
     height: 400px;
     background-color: rgb(71, 123, 66);
     background-size: cover;
 margin-top: 50px;
 background-image:url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vdGJhbGwlMjBzdGFkaXVtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60") ;
-background-size: 50% 100%;
+background-size: 100% 100%;
 background-repeat: no-repeat;
   }
   
@@ -39,8 +39,8 @@ background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;;
-  height: 50%;
+    width: 100%;;
+  height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     margin-left: 600px;

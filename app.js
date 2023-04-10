@@ -15,8 +15,8 @@ let slideIndex = 0;
 }
 
 
-
-fetch('http://localhost:3000/players')
+const fetchUrl = "http://localhost:3000/players"
+fetch(fetchUrl)
   .then(response => response.json())
   .then(data => {
     const playersContainer = document.getElementById('players-container');
@@ -52,7 +52,7 @@ fetch('http://localhost:3000/players')
 
 function deletePlayer(event) {
     const playerId = event.target.getAttribute('data-player-id');
-    fetch(`http://localhost:3000/players/${playerId}`, {
+    fetch(`${fetchUrl}/${playerId}`, {
    method: 'DELETE' })
       .then(response => {
         if (response.ok) {
@@ -73,7 +73,7 @@ function editPlayer(event) {
 const playerId = event.target.getAttribute('data-player-id');
   
   // Get the player data from the server
-  fetch(`http://localhost:3000/players/${playerId}`)
+  fetch(`${fetchUrl}/${playerId}`)
     .then(response => response.json())
     .then(player => {
       // Create an editable form for the player
@@ -119,7 +119,7 @@ const playerId = event.target.getAttribute('data-player-id');
         };
         
         // Send the updated data to the server
-        fetch(`http://localhost:3000/players/${playerId}`, {
+        fetch(`${fetchUrl}/${playerId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -165,7 +165,7 @@ const searchInput = document.getElementById('search-input');
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
   const searchQuery = searchInput.value;
-  fetch(`http://localhost:3000/players?q=${searchQuery}`)
+  fetch(`${fetchUrl}?q=${searchQuery}`)
     .then(response => response.json())
     .then(data => {
       const playersContainer = document.getElementById('players-container');
@@ -236,7 +236,7 @@ function addPlayer() {
     };
 
     // Send the new player data to the server
-    fetch('http://localhost:3000/players', {
+    fetch(fetchUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
