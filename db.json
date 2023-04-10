@@ -89,17 +89,6 @@
       "key_attribute": "Dribbling"
     },
     {
-      "id": 9,
-      "name": "Sergio Ramos",
-      "position": "Defender",
-      "image": "https://c.ndtvimg.com/2023-02/pc5rnlo_sergio-ramos-afp_625x300_23_February_23.jpeg?im=FeatureCrop,algorithm=dnn,width=240,height=180?downsize=100:*",
-      "age": 35,
-      "weight": 82,
-      "height": 184,
-      "nationality": "Spain",
-      "key_attribute": "Leadership"
-    },
-    {
       "id": 10,
       "name": "Griezmann",
       "position": "Midfielder",
@@ -177,17 +166,6 @@
       "key_attribute": "Ball Control"
     },
     {
-      "id": 20,
-      "name": "Kalidou Koulibaly",
-      "position": "Defender",
-      "image": "https://img.chelseafc.com//image/upload/f_auto,w_1400,q_90/editorial/match-reports/2022-23/Spurs%20home/koulibaly-celebration-tottenham-home.jpg",
-      "age": 30,
-      "weight": 89,
-      "height": 195,
-      "nationality": "Senegal",
-      "key_attribute": "Physicality"
-    },
-    {
       "id": 21,
       "name": "Eden Hazard",
       "position": "Forward",
@@ -207,28 +185,6 @@
       "weight": 84,
       "height": 191,
       "nationality": "France",
-      "key_attribute": "Passing"
-    },
-    {
-      "id": 23,
-      "name": "David Alaba",
-      "position": "Defender",
-      "image": "https://www.sport.fr/wp-content/uploads/2021/12/Icon_PS_211207_1165.jpg",
-      "age": 29,
-      "weight": 75,
-      "height": 180,
-      "nationality": "Austria",
-      "key_attribute": "Versatility"
-    },
-    {
-      "id": 24,
-      "name": "Jorginho",
-      "position": "Midfielder",
-      "image": "https://talksport.com/wp-content/uploads/sites/5/2023/02/jorginho-arsenal-premier-league-match-798548474.jpg?strip=all&w=960&quality=40",
-      "age": 30,
-      "weight": 68,
-      "height": 180,
-      "nationality": "Italy",
       "key_attribute": "Passing"
     },
     {
@@ -276,17 +232,6 @@
       "id": 28
     },
     {
-      "id": 29,
-      "name": "Hakim Ziyech",
-      "position": "Midfielder",
-      "image": "https://image-service.onefootball.com/transform?w=280&h=210&dpr=2&image=https%3A%2F%2Fwww.calciomio.fr%2Fwp-content%2Fuploads%2F2023%2F01%2FIcon_sipausa_43624254.jpg",
-      "age": 28,
-      "weight": 70,
-      "height": 182,
-      "nationality": "Morocco",
-      "key_attribute": "Passing"
-    },
-    {
       "name": "Marcus Rashford",
       "image": "https://weallfollowunited.com/wp-content/uploads/2022/03/manchester-united-v-tottenham-hotspur-premier-league-1-3-scaled.jpg",
       "position": "Forward",
@@ -307,6 +252,28 @@
       "nationality": "kenya",
       "key_attribute": "passing",
       "id": 31
+    },
+    {
+      "name": "faith",
+      "image": "https://th.bing.com/th/id/OIP.LI9F8USyt3X0Ob2UH0hp8gHaKX?w=182&h=254&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "position": "midfielder",
+      "age": "26",
+      "weight": "64",
+      "height": "166",
+      "nationality": "kenya",
+      "key_attribute": "passing",
+      "id": 32
+    },
+    {
+      "name": "Amad Diallo",
+      "image": "https://th.bing.com/th/id/OIP.8hXAAuQrbbXm7HA0xDJVmwHaJQ?w=128&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "position": "forward",
+      "age": "22",
+      "weight": "65",
+      "height": "166",
+      "nationality": "Ivory Coast",
+      "key_attribute": "scoring",
+      "id": 33
     }
   ]
 }
